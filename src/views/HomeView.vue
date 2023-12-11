@@ -19,12 +19,13 @@
 </template>
 
 <script setup>
-import {computed, reactive, ref, watch} from "vue";
+import {computed, reactive, ref, watch} from "vue"
+import {vAutofocus} from "@/Directives/vAutofocus.js"
 
   const counterData = reactive({
-    count: 0,
-    title: 'My Counter'
-  })
+      count: 0,
+      title: 'My Counter'
+    })
 
   const count = ref()
   watch(() => counterData.count, (newCount, oldCount) => {
@@ -46,12 +47,6 @@ import {computed, reactive, ref, watch} from "vue";
   const decreaseCounter = (amount, e) => {
     console.log(e)
     counterData.count = counterData.count - amount
-  }
-
-  const vAutofocus = {
-    mounted: (el) => {
-      el.focus()
-    }
   }
 
 
