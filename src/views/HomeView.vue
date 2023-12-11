@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import {computed, reactive, ref, watch} from "vue";
+import {computed, onBeforeMount, onBeforeUnmount, onMounted, onUnmounted, reactive, ref, watch} from "vue";
 
   const counterData = reactive({
     count: 0,
@@ -48,7 +48,18 @@ import {computed, reactive, ref, watch} from "vue";
     counterData.count = counterData.count - amount
   }
 
-
+  onBeforeMount(() => {
+    console.log('onBeforeMount')
+  })
+  onMounted(() => {
+    console.log('onMounted')
+  })
+  onBeforeUnmount(() => {
+    console.log('onBeforeUnmount')
+  })
+  onUnmounted(() => {
+    console.log('onUnmounted')
+  })
 
 </script>
 
