@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { computed, reactive, ref, watch, onMounted } from "vue"
+import { computed, reactive, ref, watch, onMounted, nextTick } from "vue"
 import { vAutofocus } from "@/Directives/vAutofocus.js"
 
 const appTitle = 'My Ok Counter App'
@@ -46,13 +46,11 @@ const appTitleRef = ref(null)
   })
 
   const increaseCounter = (amount, e) => {
-    console.log(e)
-    counterData.count = counterData.count + amount
+    counterData.count += amount
   }
 
   const decreaseCounter = (amount, e) => {
-    console.log(e)
-    counterData.count = counterData.count - amount
+    counterData.count -= amount
   }
 
   onMounted(() => {
