@@ -1,13 +1,19 @@
 <template>
   <teleport to=".modals-container">
     <div class="modal">
-      <h1>This is a modal</h1>
-      <p>lojfoejf oejfojfejij ioejgjoejojf ej ejfj loremefo fjiej ioej ioef</p>
+      <h1><slot name="title"/></h1>
+      <slot />
       <button>Hide modal</button>
     </div>
   </teleport>
 </template>
 
+<script setup>
+
+
+
+
+</script>
 
 
 
