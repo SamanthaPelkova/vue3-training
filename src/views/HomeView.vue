@@ -1,6 +1,8 @@
 <template>
   <div class="home">
 
+    <h2 ref="appTitleRef">{{ appTitle }}</h2>
+
     <h3>{{ counterData.title }}:</h3>
 
     <div>
@@ -19,8 +21,12 @@
 </template>
 
 <script setup>
-import {computed, reactive, ref, watch} from "vue"
-import {vAutofocus} from "@/Directives/vAutofocus.js"
+import { computed, reactive, ref, watch, onMounted } from "vue"
+import { vAutofocus } from "@/Directives/vAutofocus.js"
+
+const appTitle = 'My Ok Counter App'
+
+const appTitleRef = ref(null)
 
   const counterData = reactive({
       count: 0,
@@ -48,6 +54,10 @@ import {vAutofocus} from "@/Directives/vAutofocus.js"
     console.log(e)
     counterData.count = counterData.count - amount
   }
+
+  onMounted(() => {
+    console.log(`The app title is ${ appTitleRef.value.name }`)
+  })
 
 
 </script>
