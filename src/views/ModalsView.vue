@@ -11,7 +11,6 @@
     <component
     v-model="showModal"
     :is="Modal"
-    :userData="userData"
     @hide-modal="showModal = false"
     title="My modal title (via prop)"
     >
@@ -26,8 +25,6 @@ import Modal from "@/components/Modal.vue"
 
 const showDarkModals = ref(false)
 const showModal = ref(false)
-
-const props = defineProps({ userData: {type: Object} })
 
 
 </script>

@@ -9,7 +9,7 @@
     <RouterLink to="/posts">Posts</RouterLink>
   </nav>
 
-  <RouterView :userData="userData"/>
+  <RouterView />
 </template>
 
 <script setup>
