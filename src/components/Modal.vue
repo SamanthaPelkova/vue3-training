@@ -27,7 +27,7 @@ const emit = defineEmits(['hideModal'])
 
 
 const handleButtonClick = () => {
-  emit('hideModal')
+  emit('update: hideModal', false)
 }
 
 </script>
