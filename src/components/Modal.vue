@@ -4,6 +4,9 @@
       <h1>{{ title }}</h1>
       <slot />
       <button @click="$emit('hideModal')">Hide modal</button>
+      <div>
+        Username is: {{ userData }}
+      </div>
     </div>
   </teleport>
 </template>
@@ -18,6 +21,9 @@ const props = defineProps({
   modelValue: {
     type: Boolean,
     default: false
+  },
+  userData: {
+    type: Object
   }
 })
 
