@@ -14,12 +14,14 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { reactive } from "vue";
+import { reactive, provide } from "vue";
 
 const userData = reactive({
   name: 'Danny',
   username: 'dannyconnell'
 })
+
+provide('userData', userData)
 
 </script>
 
