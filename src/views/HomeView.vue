@@ -6,11 +6,11 @@
     <h3>{{ counterData.title }}:</h3>
 
     <div>
-      <button @click="decreaseCounter(1, $event)" class="btn">-</button>
-      <button @click="decreaseCounter(2, $event)" class="btn">--</button>
+      <button @click="decreaseCounter(1)" class="btn">-</button>
+      <button @click="decreaseCounter(2)" class="btn">--</button>
       <span class="counter">{{ counterData.count }}</span>
-      <button @click="increaseCounter(1, $event)" class="btn">+</button>
-      <button @click="increaseCounter(2, $event)" class="btn">++</button>
+      <button @click="increaseCounter(1)" class="btn">+</button>
+      <button @click="increaseCounter(2)" class="btn">++</button>
     </div>
 
     <p>This counter is {{ oddOrEven }}</p>

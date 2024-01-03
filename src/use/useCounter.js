@@ -17,17 +17,14 @@ export function useCounter() {
         return 'odd'
     })
 
-    const increaseCounter = (amount, e) => {
+    const increaseCounter = amount => {
         counterData.count += amount
     }
 
-    const decreaseCounter = (amount, e) => {
+    const decreaseCounter = amount => {
         counterData.count -= amount
     }
 
-    onMounted(() => {
-        console.log(`The app title is ${ appTitleRef.value.name }`)
-    })
 
     return{
         counterData,
