@@ -13,6 +13,8 @@
       <button @click="increaseCounter(2, $event)" class="btn">++</button>
     </div>
 
+    <p>This counter is {{ oddOrEven }}</p>
+
     <div class="edit">
       <h4>Edit counter title:</h4>
       <input v-model="counterData.title" type="text" v-autofocus>
@@ -21,42 +23,16 @@
 </template>
 
 <script setup>
-import { computed, reactive, ref, watch, onMounted, nextTick } from "vue"
+import { ref } from "vue"
+import { useCounter } from "@/use/useCounter.js"
 import { vAutofocus } from "@/Directives/vAutofocus.js"
 
 const appTitle = 'My Ok Counter App'
 
 const appTitleRef = ref(null)
 
-  const counterData = reactive({
-      count: 0,
-      title: 'My Counter'
-    })
 
-  const count = ref()
-  watch(() => counterData.count, (newCount, oldCount) => {
-    if (newCount === 20){
-      alert('Way to go! You made it to 20!!')
-    }
-  })
-
-  const oddOrEven = computed(() => {
-    if (counterData.count % 2 === 0) return 'even'
-    return 'odd'
-  })
-
-  const increaseCounter = (amount, e) => {
-    counterData.count += amount
-  }
-
-  const decreaseCounter = (amount, e) => {
-    counterData.count -= amount
-  }
-
-  onMounted(() => {
-    console.log(`The app title is ${ appTitleRef.value.name }`)
-  })
-
+const { increaseCounter, decreaseCounter, oddOrEven, counterData } = useCounter()
 
 </script>
 
